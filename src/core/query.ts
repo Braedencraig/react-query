@@ -301,7 +301,7 @@ export class Query<
         // we'll let the query continue so the result can be cached
         if (this.retryer) {
           if (this.retryer.isTransportCancelable) {
-            this.retryer.cancel()
+            this.retryer.cancel({ revert: true })
           } else {
             this.retryer.cancelRetry()
           }
